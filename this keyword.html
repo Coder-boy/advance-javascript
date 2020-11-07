@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        const heroPerson = {
+            name: "hero",
+            
+            getFullName:function () {
+                console.log(this);
+                return 'MR. ' + this.name;
+            }
+        }
+        
+        heroPerson.getFullName();
+
+        const otherPerson = {
+            name: "shofi"
+           
+            
+        }
+        otherPerson.getFullName = heroPerson.getFullName;
+        console.log(otherPerson.getFullName);
+        heroPerson.getFullName();
+        otherPerson.getFullName()
+
+       function add(a,b) {
+           console.log(this)
+           return a + b;
+       }
+       add(12, 13);
+
+        otherPerson.sum = add;
+        otherPerson.sum()
+    </script>
+</body>
+</html>
